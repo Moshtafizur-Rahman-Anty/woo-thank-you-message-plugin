@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WCTYM_ThankYouMessage {
 
     const OPTION_NAME = 'wctym_custom_message';
+    const OPTION_POSITION = 'wctym_message_position';
+
 
     public function __construct() {
         $this->define_constants();
@@ -32,7 +34,23 @@ class WCTYM_ThankYouMessage {
     }
 
     private function hooks() {
+$position = get_option( self::OPTION_POSITION, 'bottom_of_page' );
+
+switch ( $position ) {
+    case 'top_of_page':
+        add_action( 'woocommerce_before_main_content', array( $this, 'display_thank_you_message' ), 5 );
+        break;
+    case 'above_order_table':
+        add_action( 'woocommerce_order_details_before_order_table', array( $this, 'display_thank_you_message' ), 5 );
+        break;
+    case 'below_order_table':
+        add_action( 'woocommerce_order_details_after_order_table', array( $this, 'display_thank_you_message' ), 5 );
+        break;
+    case 'bottom_of_page':
+    default:
         add_action( 'woocommerce_thankyou', array( $this, 'display_thank_you_message' ), 5 );
+        break;
+}
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
     }
 
