@@ -1,0 +1,99 @@
+# Copyright (C) 2025 Moshtafizur
+# This file is distributed under the same license as the WooCommerce Thank You Message plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Thank You Message 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woo-thank-you-message\n"
+"Last-Translator: Moshtafizur <moshtafizur.rahman.anty@gmail.com>\n"
+"Language-Team: Moshtafizur Team <moshtafizur.rahman.anty@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-06-05T07:37:55+00:00\n"
+"PO-Revision-Date: 2025-06-05 00:00+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wctym\n"
+
+#. Plugin Name of the plugin
+#: woo-thank-you-message.php
+#: includes/settings-page.php:188
+msgid "WooCommerce Thank You Message"
+msgstr ""
+
+#. Description of the plugin
+#: woo-thank-you-message.php
+msgid "Displays a customizable thank-you message on the WooCommerce order confirmation page."
+msgstr ""
+
+#. Author of the plugin
+#: woo-thank-you-message.php
+msgid "Moshtafizur"
+msgstr ""
+
+#: includes/settings-page.php:22
+msgid "Thank You Message Settings"
+msgstr ""
+
+#: includes/settings-page.php:23
+msgid "Thank You Message"
+msgstr ""
+
+#: includes/settings-page.php:81
+msgid "Customize Thank You Message"
+msgstr ""
+
+#: includes/settings-page.php:89
+msgid "Custom Message"
+msgstr ""
+
+#: includes/settings-page.php:98
+msgid "Message Position"
+msgstr ""
+
+#: includes/settings-page.php:107
+msgid "Background Color"
+msgstr ""
+
+#: includes/settings-page.php:116
+msgid "Text Color"
+msgstr ""
+
+#: includes/settings-page.php:125
+msgid "Border Radius (px)"
+msgstr ""
+
+#: includes/settings-page.php:137
+msgid "Use placeholders like [customer_name], [order_id], [billing_email], [total]."
+msgstr ""
+
+#: includes/settings-page.php:145
+msgid "Top of Page"
+msgstr ""
+
+#: includes/settings-page.php:146
+msgid "Above Order Table"
+msgstr ""
+
+#: includes/settings-page.php:147
+msgid "Below Order Table"
+msgstr ""
+
+#: includes/settings-page.php:148
+msgid "Bottom of Page (Default)"
+msgstr ""
+
+#: includes/settings-page.php:161
+msgid "Choose where the thank-you message should appear on the order received page."
+msgstr ""
+
+#: includes/settings-page.php:168
+msgid "Leave empty to use default background style from plugin."
+msgstr ""
+
+#: includes/settings-page.php:175
+msgid "Leave empty to use default text color from plugin CSS."
+msgstr ""
+
+#: includes/settings-page.php:182
+msgid "Optional border radius in pixels. Leave blank for default."
+msgstr ""

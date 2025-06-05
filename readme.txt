@@ -1,5 +1,5 @@
 === WooCommerce Thank You Message ===
-Contributors: yourusername
+Contributors: Moshtafizur
 Tags: woocommerce, thank you page, order confirmation, message, customize
 Requires at least: 5.0
 Tested up to: 6.5
