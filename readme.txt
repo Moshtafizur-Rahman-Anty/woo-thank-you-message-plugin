@@ -9,8 +9,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 Plugin URI: https://github.com/Moshtafizur-Rahman-Anty/woo-thank-you-message-plugin/
 
-Add a custom, personalized message to your WooCommerce Thank You page using dynamic placeholders like [customer_name], [order_id], [billing_email], and [total].
-
+Add a custom thank-you message to WooCommerce order pages with dynamic placeholders like [customer_name] and [order_id].
 == Description ==
 
 Display a custom thank you message on the WooCommerce order page using dynamic tags and color options.
