@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Thank You Message
  * Description: Displays a customizable thank-you message on the WooCommerce order confirmation page.
  * Version: 1.0
- * Author: Your Name
+ * Author: Moshtafizur
  * Text Domain: wctym
  */
 
@@ -16,6 +16,10 @@ class WCTYM_ThankYouMessage {
 
     const OPTION_NAME = 'wctym_custom_message';
     const OPTION_POSITION = 'wctym_message_position';
+    const OPTION_BG_COLOR = 'wctym_bg_color';
+    const OPTION_TEXT_COLOR = 'wctym_text_color';
+    const OPTION_BORDER_RADIUS = 'wctym_border_radius';
+
 
 
     public function __construct() {
@@ -37,9 +41,10 @@ class WCTYM_ThankYouMessage {
 $position = get_option( self::OPTION_POSITION, 'bottom_of_page' );
 
 switch ( $position ) {
-    case 'top_of_page':
-        add_action( 'woocommerce_before_main_content', array( $this, 'display_thank_you_message' ), 5 );
-        break;
+case 'top_of_page':
+    add_action( 'woocommerce_before_thankyou', array( $this, 'display_thank_you_message' ), 5 );
+    break;
+
     case 'above_order_table':
         add_action( 'woocommerce_order_details_before_order_table', array( $this, 'display_thank_you_message' ), 5 );
         break;
@@ -68,15 +73,41 @@ switch ( $position ) {
 
         // Replace placeholders
         $placeholders = array(
-            '[customer_name]' => $order->get_billing_first_name(),
-            '[order_id]'      => $order->get_id()
-        );
+    '[customer_name]' => $order->get_billing_first_name(),
+    '[order_id]'      => $order->get_id(),
+    '[billing_email]' => $order->get_billing_email(),
+    '[total]'         => $order->get_formatted_order_total()
+);
         $final_message = strtr( $message, $placeholders );
 
-        echo '<div class="wctym-thank-you">';
-        echo wpautop( esc_html( $final_message ) );
-        echo '</div>';
+
+    // Style overrides (optional)
+    $bg_color       = get_option( self::OPTION_BG_COLOR );
+    $text_color     = get_option( self::OPTION_TEXT_COLOR );
+    $border_radius  = get_option( self::OPTION_BORDER_RADIUS );
+
+    $style = '';
+    if ( $bg_color ) {
+        $style .= 'background-color:' . esc_attr( $bg_color ) . ';';
     }
+    if ( $text_color ) {
+        $style .= 'color:' . esc_attr( $text_color ) . ';';
+    }
+    if ( $border_radius ) {
+        if ( is_numeric( $border_radius ) ) {
+        $border_radius .= 'px'; // convert 10 → 10px
+    }
+        $style .= 'border-radius:' . esc_attr( $border_radius ) . ';';
+    }
+
+    echo '<div class="wctym-thank-you"' . ( $style ? ' style="' . $style . '"' : '' ) . '>';
+    echo wpautop( wp_kses_post( $final_message ) );
+    echo '</div>';
+}
+
+
+
+
 }
 
 // Initialize plugin
