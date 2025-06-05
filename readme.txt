@@ -1,8 +1,8 @@
-=== WooCommerce Thank You Message ===
+=== Custom Thank You Message for WooCommerce ===
 Contributors: Moshtafizur  
 Tags: woocommerce, thank you page, order confirmation, message, customize  
 Requires at least: 5.0  
-Tested up to: 6.5  
+Tested up to: 6.8 
 Requires PHP: 7.2  
 Stable tag: 1.0  
 License: GPLv2 or later  
@@ -13,7 +13,7 @@ Add a custom, personalized message to your WooCommerce Thank You page using dyna
 
 == Description ==
 
-Display a custom thank-you message to your WooCommerce customers after they place an order. This plugin allows store owners to personalize the confirmation page with dynamic content such as the customer's name, email, order ID, and total price.
+Display a custom thank you message on the WooCommerce order page using dynamic tags and color options.
 
 Use placeholders in your message:
 - `[customer_name]` — Replaced with the customer's billing first name
